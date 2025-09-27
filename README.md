@@ -23,9 +23,6 @@ python main.py
 ## Project Structure
 
 ```
-
-### 2. **Install Dependencies**
-```bash
 pip install -r requirements.txt
 ```
 
