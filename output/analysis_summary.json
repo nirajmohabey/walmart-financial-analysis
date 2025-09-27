@@ -1,0 +1,18 @@
+{
+    "analysis_date": "2025-09-27 02:12:11",
+    "data_period": "2018 - 2022",
+    "total_ratios": 22,
+    "latest_year": 2022,
+    "key_metrics": {
+        "current_ratio": 0.8205709457397461,
+        "debt_to_equity": 0.0,
+        "net_profit_margin": 0.019107164815068245,
+        "roe": 0.15229551494121552,
+        "altman_z_score": 3.487698793411255,
+        "piotroski_f_score": 0.0
+    },
+    "risk_assessment": {
+        "altman_risk_level": "Safe",
+        "piotroski_quality": "Unknown"
+    }
+}
