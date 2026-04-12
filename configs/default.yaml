@@ -1,0 +1,48 @@
+# Financial Health Scoring — default configuration (no hardcoded paths in code)
+
+data:
+  # Minimum 5 tickers; edit freely — system ranks whatever set you provide
+  tickers:
+    - WMT
+    - TGT
+    - COST
+    - AMZN
+    - KR
+  # Optional: limit fiscal years (null = use all overlapping years from statements)
+  min_year: null
+  max_year: null
+  # Cache downloaded statements for reproducibility between runs (same cache = same inputs)
+  cache_dir: data/cache
+  use_cache: true
+
+output:
+  dir: output
+
+scoring:
+  # Composite sub-score weights (must sum to 1.0)
+  composite_weights:
+    profitability: 0.35
+    liquidity: 0.20
+    leverage: 0.25
+    efficiency: 0.20
+  # Blend: 0 = composite only, 1 = Piotroski only (0-9 scaled to 0-100)
+  piotroski_blend: 0.25
+  # Within each pillar, metric weights (normalized in code)
+  pillar_metrics:
+    profitability:
+      roe: 0.35
+      roa: 0.30
+      net_profit_margin: 0.35
+    liquidity:
+      current_ratio: 0.5
+      quick_ratio: 0.5
+    leverage:
+      debt_to_equity: 0.45
+      interest_coverage: 0.55
+    efficiency:
+      asset_turnover: 0.5
+      inventory_turnover: 0.5
+
+ranking:
+  # Primary column for overall rank
+  score_column: composite_score

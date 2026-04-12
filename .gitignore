@@ -19,6 +19,7 @@ wheels/
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
+financial_intel.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
@@ -47,8 +48,8 @@ logs/*.log
 *.pkl
 *.cache
 
-# Data files (if sensitive)
-# data/*.xlsx
+# Downloaded statement cache (reproducible local only)
+data/cache/*.parquet
 
 # Streamlit
 .streamlit/
